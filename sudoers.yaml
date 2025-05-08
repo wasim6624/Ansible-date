@@ -1,0 +1,7 @@
+---
+- name: Assiging sudo priviledges for users
+  hosts: localhost
+  tasks:
+  - ansible.builtin.command: "grep -e 'usr/bin/zsh' -e '/bin/bash' /etc/passwd| grep -v root | sed -E 's/:.*//'"
+    register: users
+...
